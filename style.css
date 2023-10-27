@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: rgb(237, 237, 237);
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+}
+h2{
+    color: #292f2a !important;
+    font-size: 22px !important;
+}
+p,li{
+    color: #39433b;
+}
+
+header{
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0px 0px 5px 8px rgb(0, 0, 0,.1);
+}
+header nav{
+    text-align: center;
+}
+header nav a{
+    color: #fff !important;
+    background-color: rgb(126, 150, 128);
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+    width: 250px;
+    height: 30px;
+}
+
+section{
+    width: 85%;
+    margin:20px auto;
+    padding: 10px 0;
+}
+.info h2,.type h2{
+    font-size: 22px;
+    margin: 10px 0;
+}
+.info p,.type aside,.between aside,.ddl aside{
+    background-color: #ffffff;
+    border-right: 8px solid #7E9680;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.type ul{
+    list-style: none;
+    padding: 10px;
+    background-color: #f3f1f1;
+}
+.type ul li{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.type p{
+    font-size: 20px;
+    margin: 20px 0;
+}
+.note{
+    background-color: rgb(234, 181, 149,.5);
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+    margin: 20px auto;
+    width: 85%;
+}
+.note p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.note li{
+    margin: 10px 0;
+    font-size: 18px;
+}
+.between h2{
+    font-size: 22px;
+    margin: 10px 0;
+}
+.between p{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.between h5{
+    padding: 10px;
+    background-color: #f3f1f1;
+    border-radius: 5px;
+}
+table{
+    text-align: center;
+    border: 1px solid #7E9680;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+table thead{
+    padding: 10px;
+    background-color: #7E9680;
+  
+}
+table thead tr th{
+    padding: 10px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+table thead tr{
+    margin: 10px;
+    font-size: 20px;
+}
+table tbody tr,td{
+    border: 1px solid #7E9680;
+    padding: 10px;
+}
+.ddl aside{
+    border-right: 8px solid #7E9680;
+}
+.ddl h2{
+    margin: 10px 0;
+    font-size: 22px;
+}
+.ddl p{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.ddl ul{
+    margin: 10px 0;
+    list-style: none;
+    background-color: #f3f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+.ddl ul li{
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+footer{
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 8px rgb(0, 0, 0,.1);
+}
+footer p{
+    color: #252b25;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* ============================================================= */
+.my-sql{
+    background-color: #fcfcfc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.my-sql article div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7E9680;
+    padding: 8px;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+}
+.my-sql article div h3{
+    color: #ffffff;
+    font-size: 18px;
+}
+.my-sql article div a{
+    color: #ffffff !important;
+    text-decoration: none;
+}
+.my-sql article{
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f3f1f1;
+    direction: ltr;
+}
+.my-sql article p{
+    padding: 15px 10px;
+    font-size: 18px;
+}
+.my-sql article pre{
+    margin: -15px 0;
+    padding: 0 !important;
+}
+.my-sql article span{
+    color: #AE6378;
+}
+.my-sql button{
+    background-color: transparent;
+    font-size: 18px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.my-sql h5{
+    font-size: 18px;
+    margin: 10px;
+    color:#3c2a2f ;
+}
+/* ========================SHMMER========================= */
+@keyframes loading{
+    0%{
+      background-color: hsl(200, 20%, 70%);
+    }
+    100%{
+      background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.page{
+    display: none;
+}
+
+.shemmer-info,.shemmer-type{
+    width: 100%;
+    margin: 10px auto;
+}
+.shemmer-info div,.shemmer-type div{
+    border-radius: 5px;
+    background-color: hsl(200, 20%, 70%);
+    animation: loading 1s linear infinite alternate;
+}
+.shemmer-info div:nth-child(1){
+    width: 200px;
+    height: 30px;
+    margin: 10px 0;
+}
+.shemmer-info div:nth-child(2){
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.shemmer-type div:nth-child(1){
+    width: 200px;
+    height: 30px;
+    margin: 10px 0;
+}
+.shemmer-type div:nth-child(2){
+    width: 100%;
+    height: 500px;
+    margin: 10px 0;
+}
+
+.shemmer-note{
+    width: 100%;
+    height: 250px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: hsl(200, 20%, 70%);
+    animation: loading 1s linear infinite alternate;
+}
+/* ---------------------------------------------------- */
+.shemmer-code{
+    width: 100%;
+    height: 300px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: hsl(200, 20%, 70%);
+    animation: loading 1s linear infinite alternate;
+}
+/* ====================================================== */
+#toTopBtn {
+    background-color: #7E9680;
+    border: none;
+    border-radius: 8px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+  }
+@media screen and (max-width:1000px){
+    h2{
+        font-size: 20px !important;
+    }
+    header{
+        padding: 18px 0;
+    }
+    header nav a{
+        padding: 3px 8px;
+        margin: 0 3px;
+    }
+    section{
+        width: 96%;
+        margin:10px auto;
+    }
+    .info h2,.type h2{
+        margin: 8px 0;
+    }
+    .info p,.type aside,.between aside,.ddl aside{
+        font-size: 16px;
+        margin: 8px 0;
+        border-right-width:5px ;
+    }
+    
+    .type ul li{
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    .type p{
+        font-size: 16px;
+        margin: 15px 0;
+    }
+    .note{
+        margin: 10px auto;
+        width: 96%;
+    }
+    .note p{
+        font-size: 16px;
+    }
+    .note li{
+        margin: 8px 0;
+        font-size: 16px;
+    }
+    .between h2{
+        font-size: 20px;
+    }
+    .between p{
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    .between h5{
+        padding: 10px;
+    }
+    table{
+        border: 1px solid rgb(126, 150, 128,.5);
+        margin: 8px 0;
+    }
+    table thead{
+        padding: 8px;
+    }
+    table thead tr th{
+        padding: 8px;
+    }
+    table thead tr{
+        margin: 8px;
+        font-size: 16px;
+    }
+    table tbody tr,td{
+        border: 1px solid rgb(126, 150, 128,.5);
+        padding: 8px;
+    }
+    .ddl aside{
+        border-right: 5px solid #7E9680;
+    }
+    .ddl h2{
+        margin: 8px 0;
+        font-size: 20px;
+    }
+    .ddl p{
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .ddl ul li{
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    
+    footer p{
+        font-size: 16px;
+    }
+    /* =================================== */
+    .my-sql{
+        margin: 8px 0;
+    }
+    .my-sql article div{
+        padding: 5px;
+    }
+    .my-sql article div h3{
+        font-size: 16px;
+    }
+    .my-sql article{
+        margin: 8px 0;
+        padding-bottom: 8px;
+    }
+    .my-sql article p{
+        padding: 10px ;
+        font-size: 16px;
+    }
+    .my-sql article pre{
+        margin: -10px 0;
+    }
+    .my-sql h5{
+        font-size: 15px;
+        margin: 8px;
+    }
+    /* ===============shemer============= */
+    .shemmer-info div:nth-child(2){
+        height: 200px;
+    }
+    
+    .shemmer-type div:nth-child(2){
+        height: 600px;
+    }
+    
+    .shemmer-note{
+        height: 300px;
+    }
+    .shemmer-code{
+        height: 150px;
+    }
+ 
+}
+
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>قواعد بيانات</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="code.html">اوامر sql</a>
+            <a href="soon.html">ربط mysql بالواجهات</a>
+        </nav>
+    </header>
+
+    <section class="page">
+
+        <div class="info page">
+            <h2>ماهي قواعد البيانات :</h2>
+            <p>
+                هي مجموعة من المعلومات المرتبطة ببعضها البعض بطريقة منطقية، يتم تخزينها إلكترونيًا في نظام كمبيوتر.
+                 تُستخدم قواعد البيانات لتخزين وتنظيم وإدارة كميات كبيرة من البيانات، مما يسهل على المستخدمين الوصول إليها ومعالجتها.
+                
+            </p>
+        </div>
+
+        <div class="shemmer shemmer-info">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="type page">
+
+            <h2>أنواع قواعد البيانات : </h2>
+            <aside>
+                <div>
+                    <p>
+                       1-  قواعد البيانات العلائقية (Relational Databases): هي أكثر أنواع قواعد البيانات شيوعًا. تُستخدم قواعد البيانات العلائقية لتخزين البيانات في شكل جداول، حيث تُمثل كل صف سجلًا من البيانات، والأعمدة تُمثل حقول البيانات. تُستخدم العلاقات 	لربط الجداول ببعضها البعض.
+                        <br><br> بعض انواع قواعد البيانات العلائقية : 
+                    </p>
+                    <ul>
+                        <li>MySQL: هي قاعدة بيانات مفتوحة المصدر شائعة الاستخدام.</li>
+                        <li>PostgreSQL: هي قاعدة بيانات مفتوحة المصدر توفر مجموعة واسعة من الميزات.</li>
+                        <li>Oracle: هي قاعدة بيانات تجارية قوية.</li>
+                        <li>Microsoft SQL Server: هي قاعدة بيانات تجارية شائعة الاستخدام.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p>
+                        2- قواعد البيانات غير العلائقية (NoSQL Databases): 
+                        هي أنواع جديدة نسبيًا من قواعد البيانات تُستخدم لتخزين أنواع مختلفة من البيانات، مثل البيانات غير المهيكلة والبيانات المتدفقة.
+                      
+                        <br><br> بعض انواع قواعد البيانات اللاعلائقية
+                    </p>
+        
+                    <ul>
+                        <li>MongoDB: هي قاعدة بيانات مستندية شائعة الاستخدام.</li>
+                        <li>Cassandra: هي قاعدة بيانات مفتوحة المصدر موثوقة.</li>
+                        <li>Redis: هي قاعدة بيانات ذاكرة تخزين مؤقت شائعة الاستخدام.</li>
+                        <li>HBase: هي قاعدة بيانات مفتوحة المصدر تُستخدم لتخزين البيانات الكبيرة.</li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+
+        <div class="shemmer shemmer-type">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="shemmer shemmer-note">
+
+        </div>
+
+    </section>
+
+    <ul class="note page">
+        <p>   تُستخدم قواعد البيانات غير العلائقية في مجموعة متنوعة من	 التطبيقات، بما في ذلك:</p>
+        <li>التطبيقات الكبيرة (Big Data Applications): تُستخدم قواعد البيانات غير العلائقية لتخزين وتحليل كميات كبيرة من البيانات.</li>
+        <li>التطبيقات المتدفقة (Streaming Applications): تُستخدم قواعد البيانات غير العلائقية لتخزين البيانات المتدفقة، مثل البيانات من أجهزة الاستشعار.</li>
+        <li>التطبيقات الاجتماعية (Social Applications): تُستخدم قواعد البيانات غير العلائقية لتخزين البيانات الاجتماعية، مثل بيانات المستخدمين من مواقع التواصل الاجتماعي.
+        </li>
+    </ul>
+
+   
+
+    <section class="page">
+        <div class="between">
+            <h2>مالفرق بين ال SQL و ال MYSQL</h2>
+            <p>الفرق الرئيسي بين SQL و MySQL هو أن SQL لغة استعلام بينما MySQL برنامج. </p>
+            <aside>
+                <div class="sql">
+                    <p>
+                        SQL (Structured Query Language) هي لغة استعلام تُستخدم للتفاعل مع قواعد البيانات العلائقية. تُستخدم SQL لإنشاء قواعد البيانات وإدارتها، بالإضافة إلى استعلام البيانات وتحديثها وحذفها.
+                    </p>
+                    <h5>
+                        تستخدم SQL للتفاعل مع قواعد البيانات العلائقية،
+                    </h5>
+                </div>
+                <div class="mysql">
+                    <p>MySQL هي قاعدة بيانات مفتوحة المصدر وعلائقية تستخدم SQL. تُعد MySQL واحدة من أكثر قواعد البيانات شيوعًا في العالم، وتُستخدم في مجموعة متنوعة من التطبيقات، بما في ذلك مواقع الويب والمنتديات والتطبيقات التجارية.</p>
+                   <h5>
+                     MySQL قاعدة بيانات علائقية تستخدم SQL.
+                   </h5>
+                </div>
+            </aside>
+          
+        </div>
+
+        <h2>جدول يوضح الفروق الرئيسيه بينهما : </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>خاصية</th>
+                    <th>SQL</th>
+                    <th>MYSQL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>النوع</td>
+                    <td>لغة استعلام</td>
+                    <td>قاعدة بيانات</td>
+                </tr>
+                <tr>
+                    <td>الغرض</td>
+                    <td>التفاعل مع قواعد البيانات العلائقية</td>
+                    <td>تخزين البيانات وادارتها</td>
+                </tr>
+                <tr>
+                    <td>التكلفة</td>
+                    <td>مفتوحة المصدر</td>
+                    <td>مفتوحة المصدر او تجارية</td>
+                </tr>
+                <tr>
+                    <td>الاستخدامات</td>
+                    <td>انشاء قواعد البيانات وادارتها بالاضافة الى استعلام البيانات وتحديثها وحذفها</td>
+                    <td>مجموعة متنوعة من التطبيقات، بما في ذلك مواقع الويب والمنتديات والتطبيقات التجارية</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ddl">
+            <h2>ماهي اوامر ال DDL : </h2>
+            <aside>
+                <p>
+                    DDL هو اختصار لـ Data Definition Language، وهو مجموعة من أوامر SQL التي تُستخدم لإنشاء وإدارة بنية قاعدة البيانات. تتضمن أوامر DDL إنشاء قواعد البيانات والجداول والعناصر الأخرى في قاعدة البيانات، بالإضافة إلى تعديلها وحذفها.
+                    
+                    فيما يلي بعض الأوامر الشائعة لـ DDL :
+                <p>
+                <ul>
+                    <li>CREATE DATABASE: يُستخدم هذا الأمر لإنشاء قاعدة بيانات جديدة.</li>
+                    <li>CREATE TABLE: يُستخدم هذا الأمر لإنشاء جدول جديد.</li>
+                    <li>ALTER TABLE: يُستخدم هذا الأمر لتعديل جدول موجود.</li>
+                    <li>DROP DATABASE: يُستخدم هذا الأمر لحذف قاعدة بيانات موجودة.</li>
+                    <li>DROP TABLE: يُستخدم هذا الأمر لحذف جدول موجود.</li>
+                    <li>TRUNCATE: تستخدم لحذف جميع البيانات من جدول دون حذف الجدول نفسه.</li>
+                    <li>RENAME: تستخدم لتغيير اسم كائن موجود في قاعدة البيانات.</li>
+                </ul>
+            </aside>
+    
+        </div>
+
+        <div class="ddl">
+            <h2>ماهي اوامر ال DML : </h2>
+            <aside>
+                <p>
+                    DML هي اختصار لـ Data Manipulation Language، وهي لغة استعلام تستخدم لإضافة وحذف وتعديل البيانات في قاعدة البيانات. DML هي جزء من لغة SQL، وهي اللغة القياسية لقواعد البيانات العلائقية.
+                    فيما يلي بعض الأوامر الشائعة لـ DML :
+                <p>
+                <ul>
+                    <li>INSERT: تستخدم لإضافة بيانات جديدة إلى جدول.</li>
+                    <li>SELECT: استرداد البيانات من جدول بناءً على شرط.او استرداد جميع البيانات.</li>
+                    <li>UPDATE: تستخدم لتعديل بيانات في جدول.</li>
+                    <li>DELETE: تستخدم لحذف بيانات من جدول.</li>
+                </ul>
+            </aside>
+        </div>
+
+    </section>
+
+    <button onclick="scrollToTop()" id="toTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <footer>
+        <p>BY : WAEL ALBAHRI &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+    <script>
+       $(window).on('load',function(){
+           $(".shemmer").fadeOut(1000);
+           $(".page").fadeIn(1000);
+       }); 
+    </script>
+
+
+   <script src="main.js"></script>
+</body>
+</html>
