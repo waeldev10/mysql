@@ -1,20 +1,3 @@
-let btn = document.getElementsByClassName("btn");
-
-function copyText() {
-
-    let pElements = document.querySelectorAll(".result");
-
-    // كرر كل عنصر p
-    for (let i = 0; i < pElements.length; i++) {
-      // احصل على النص الموجود داخل العنصر p
-      let text = pElements[i].textContent;
-  
-      // انسخ النص إلى الحافظة
-      navigator.clipboard.writeText(text);
-    }
-
-    
-  }
 
   window.onscroll = function() {
     scrollFunction();
@@ -28,3 +11,19 @@ function copyText() {
   function scrollToTop() {
     document.documentElement.scrollTop = 0;
   }
+
+
+  document.querySelectorAll('.copy').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      let index = Array.from(document.querySelectorAll('.copy')).indexOf(button);
+      let text = document.querySelectorAll('.result')[index].innerText;
+      let elem = document.createElement('textarea');
+      document.body.appendChild(elem);
+      elem.value = text;
+      elem.select();
+      document.execCommand('copy');
+      document.body.removeChild(elem);
+      alert("تم النسخ بنجاح")
+    });
+  });
+

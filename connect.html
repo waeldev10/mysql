@@ -15,12 +15,179 @@
     <header>
         <nav>
             <a href="index.html">الرئيسية</a>
-            <a href="code.html">اوامر sql</a>
-            <a href="connect.html">ربط mysql بالواجهات</a>
+            <a href="code.html" > sql</a>
+            <a href="connect.html" class="active">ربط مع vs</a>
+            <a href="soon.html">العلاقات</a>
         </nav>
      
     </header>
 
+    <div class="top"></div>
+
+    <section class="content page">
+
+        <h2>الخطوة الاولى : </h2>
+
+        <article>
+            <p class="p"> <span>تحميل الملف Mysql.Data</span>  <a href="mysql.data.dll" download > <i class="fa-solid fa-download"></i>  تحميل </a></p>
+        </article>
+
+        <h2>الخطوة الثانية :</h2>
+
+        <article>
+            <p>انشاء مشرع جديد windos dorm applction</p>
+            <hr>
+            <img class="img" src="create.png" alt="create">
+        </article>
+
+        <h2>الخطوة الثالثة : </h2>
+
+        <article>
+            <p>انشاء قاعدة بيانات جديده</p>
+            <h5 class="h5" dir="ltr">
+                <span>CREATE DATABASE</span> my_database;
+            </h5>
+            <p>يمكننك تسمية قاعدة البيانات الخاصه بك باي اسم</p>
+        </article>
+
+        <h2>الخطوة الرابعة :</h2>
+
+        <article>
+            <p>اضافة ملف Mysql.data الى برنامج VS </p>
+            <div class="imgs">
+                <div>
+                    <img src="add.png" alt="add">
+                    <p>
+                        1- بعد الضغط على يمين الماوس في refrense نختار Add refrense
+                    </p>
+                </div>
+                <div>
+                    <img src="chose.png" alt="chose">
+                    <p>
+                        2- نقوم بالضغط على كلمة Broese من ثم نختار الملف Mysql.Data والضغط عى OK
+                    </p>
+                </div>
+                <div>
+                    <img src="shur.PNG" alt="shur">
+                    <p>
+                        3- التأكد من ان الملف Mysql.Data تم اضافته الى ال Refrense
+                    </p>
+                </div>
+               
+            </div>
+        </article>
+
+        <h2>الخطوة الخامسة : </h2>
+
+        <article>
+            <p>اضافة زر Button للتأكد من الاتصال</p>
+
+            <div class="imgs im">
+                <div>
+                    <img src="btn.png" alt="btn">
+                    <p>
+                        1- اضافة من مربع الادوات Button الى ال Form من ثم الضغط عليه مرتين لتظهر لنا صفحة الكود
+                    </p>
+                </div>
+                <div>
+                    <img src="import.PNG" alt="import">
+                    <p>
+                        2- استخدام  او استدعاء لمكتبة Mysql.Daat في رأس الصفحة من خلال اضافة الامر التالى
+                    </p>
+                </div>
+            </div>
+
+            <h5 dir="ltr" class="h5">
+                <span>using</span> MySql.Data.MySqlClient;
+            </h5>
+        </article>
+        
+        <h2>الخطوة السادسة </h2>
+
+        <article>
+            <p>عندما يتم الضغط على ال Button مرتين سيتم عرض هذه الداله </p>
+            <pre>
+                <h5 class="h5" dir="ltr">
+    <span>private void</span> button1_Click(<span>object</span> sender,<span>EventArgs</span>  e)
+    {
+
+    }
+                </h5>
+            </pre>
+
+            <p class="pp">نقوم باضافة هذا الكود داخل الداله السابقة </p>
+
+            <pre>
+           
+            <h5 class="h5" dir="ltr">
+
+    <span>MySqlConnection</span> connection = <span>new MySqlConnection</span>(
+        "server=localhost; uid=root; pwd=0000; database=my_database"
+        );
+
+    <span>try</span>
+    {
+        connection.<span>Open</span>();
+
+        <span>if</span> (connection.State == ConnectionState.Open)
+        {
+            <span>MessageBox.Show</span>("تم الاتصال بنجاح!");
+        }
+
+    }
+
+    <span>catch</span> (<span>Exception</span> ex)
+    {
+        <span>MessageBox.Show</span> ("حدث خطأ أثناء الاتصال: " + ex.<span>Message</span>);
+    }
+
+    connection.<span>Close</span>();
+ 
+            </h5>
+            </pre>
+            <p>
+                ملاحظة : في الكود يوجد لدينا كلمتين الكلمة الاولى : <span class="span">uid=root</span> تعني اسم المستخدم الخاص بال mysql اذا 
+                 لم يكن هناك اسم مستخدم يمكننك تركه كما هو او تغيير اسم المستخدم الخاص بك<br>
+                اما الكلمة الاخرى هي <span class="span">pwd=0000</span> تعني كلمة المرور الخاصه بال mysql يمكننك تغييرها بكلمة المرور الخاص بك او تركها فارغا في حال لم يكن لديك كلمة مرور
+            </p>
+        </article>
+
+        <h2>الخطوة السابعة : </h2>
+
+        <article>
+            <p>تنفيذ البرنامج والضغط على الز اذا كانت الرسالة الظاهرة تم الاتصال بنجاح فان الربط صحيح ويمكننا تنفيذ بقية الاستعلامات 
+                اما اذا كان هناك خطاء فاننا سنحاول اصلاحه بناءا على رسالة الخطاء اللتي ستظهر
+                <br>
+                ملاحظة : قبل ضغط الزر وتجربة الربط يرجى التأكد من ان برنامج ال mysql الخاص بك قيد التشغيل
+            </p>
+        </article>
+
+    </section>
+
+    <div class="load">
+
+        <div class="shemmer shemmer-info con">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="shemmer shemmer-info con">
+            <div></div>
+            <div></div>
+        </div>
+        
+        <div class="shemmer shemmer-type">
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="shemmer shemmer-note">
+    
+        </div>
+
+    </div>
+
+    <button onclick="scrollToTop()" id="toTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
 
     <footer>
         <p>BY : WAEL ALBAHRI &copy; 2023</p>
@@ -28,10 +195,10 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
     <script>
-    $(window).on('load',function(){
-        $(".shemmer").fadeOut(1000);
-        $(".my-sql").fadeIn(1000);
-    }); 
+       $(window).on('load',function(){
+           $(".load").fadeOut(1000);
+           $(".page").fadeIn(1000);
+       }); 
     </script>
 
 

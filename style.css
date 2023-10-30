@@ -11,6 +11,51 @@ body{
     font-family: 'Cairo', sans-serif;
     position: relative;
 }
+.body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.body .soon{
+    width: 85%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.body .soon img{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
+.body .soon h1{
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+}
+.body .soon a{
+    border:1px solid #7E9680;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #7E9680 !important;
+    padding: 5px 20px;
+    font-size: 20px;
+    margin: 20px 0;
+    transition: all .4s ease-in;
+}
+.body .soon a:hover{
+    background-color: #7E9680;
+    color: #ffffff !important;
+}
+.body footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 h2{
     color: #292f2a !important;
     font-size: 22px !important;
@@ -20,22 +65,40 @@ p,li{
 }
 
 header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #ffffff;
     padding: 20px 0;
+    z-index: 1000;
     box-shadow: 0px 0px 5px 8px rgb(0, 0, 0,.1);
+}
+.top{
+    margin-top: 80px;
 }
 header nav{
     text-align: center;
+    width: 100%;
 }
 header nav a{
-    color: #fff !important;
-    background-color: rgb(126, 150, 128);
+    color: #7E9680 !important;
+    border:1px solid rgb(126, 150, 128);
     border-radius: 5px;
     padding: 5px 20px;
     text-decoration: none;
     margin: 0 10px;
     width: 250px;
     height: 30px;
+    transition: all .4s ease-in-out;
+}
+header nav a:hover{
+    background-color: #7E9680;
+    color: #ffffff !important;
+}
+.active{
+    background-color: #7E9680;
+    color: #ffffff !important;
 }
 
 section{
@@ -192,6 +255,7 @@ footer p{
 .my-sql article p{
     padding: 15px 10px;
     font-size: 18px;
+    overflow: scroll;
 }
 .my-sql article pre{
     margin: -15px 0;
@@ -212,6 +276,99 @@ footer p{
     margin: 10px;
     color:#3c2a2f ;
 }
+.inner{
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+.inner span{
+    font-size: 18px;
+}
+.inner a{
+    background-color: #7E9680;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+/* ===================================================== */
+.content{
+    width: 85%;
+    margin: 10px auto;
+}
+.content article .p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content article .p a{
+    background-color: #7E9680;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 5px 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.content h2{
+    margin: 10px 0;
+    font-size: 22px;
+}
+.content article{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border-right: 8px solid #7E9680;
+    margin: 10px 0;
+}
+.content article .img{
+  display: none;
+}
+.content article p{
+    margin: 10px 0;
+    font-size: 20px;
+}
+.content article .h5{
+    margin: 10px 0;
+    font-size: 20px;
+    background-color: #f3f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+.content article .h5 span{
+    color: #AE6378;
+}
+.imgs{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;   
+ margin: 10px 0;
+}
+.imgs div{
+    background-color: #f3f1f1;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 33%;
+    box-shadow: none;
+}
+.imgs div img{
+    width: 100%;
+    height: 300px;
+}
+.im div{
+    width: 50%;
+}
+.pp{
+    margin:0 !important;
+}
+.span{
+    color: #AE6378;
+    font-weight: bold;
+}
 /* ========================SHMMER========================= */
 @keyframes loading{
     0%{
@@ -221,7 +378,11 @@ footer p{
       background-color: hsl(200, 20%, 95%);
     }
 }
-
+.load{
+    width: 85%;
+    margin:50px auto 20px auto;
+    margin-top: 100px;
+}
 .page{
     display: none;
 }
@@ -287,7 +448,22 @@ footer p{
     padding: 15px;
     cursor: pointer;
   }
+
 @media screen and (max-width:1000px){
+    .body .soon img{
+        width: 50%;
+        height: 150px;
+    }
+    .body .soon{
+        width: 96%;
+    }
+    .body .soon h1{
+        font-size: 18px;
+    }
+    .body .soon a{
+        padding: 5px 15px;
+        font-size: 18px;
+    }
     h2{
         font-size: 20px !important;
     }
@@ -297,6 +473,7 @@ footer p{
     header nav a{
         padding: 3px 8px;
         margin: 0 3px;
+        font-size: 18px;
     }
     section{
         width: 96%;
@@ -403,7 +580,69 @@ footer p{
         font-size: 15px;
         margin: 8px;
     }
+    .inner{
+        padding:10px;
+    }
+    .inner span{
+        font-size: 17px;
+    }
+    .inner a{
+        padding: 5px 15px;
+        font-size: 17px;
+    }
+    /* -------------------------------- */
+    .content{
+        width: 96%;
+    }
+
+    .content h2{
+        font-size: 18px;
+    }
+    .content article{
+        padding: 8px;
+        border-right: 5px solid #7E9680;
+    }
+    .content article .img{
+        display: block;
+        height: 200px;
+        margin: 10px auto;
+    }
+    .content article p{
+        margin: 8px 0;
+        font-size: 16px;
+    }
+    .content article .h5{
+        overflow: scroll;
+        margin: 8px 0;
+        font-size: 17px;
+        padding: 8px;
+    }
+    .imgs{
+        flex-direction: column;
+    }
+    .imgs div{
+        padding: 8px;
+        width: 100%;
+    }
+    .imgs div img{
+        object-fit: cover;
+        height: 200px;
+    }
+    .im div{
+        width: 100%;
+    }
+    .pp{
+        margin:0 !important;
+    }
+    .span{
+        color: #AE6378;
+        font-weight: bold;
+    }
     /* ===============shemer============= */
+    .load{
+        width: 96%;
+        margin:30px auto 20px auto;
+    }
     .shemmer-info div:nth-child(2){
         height: 200px;
     }

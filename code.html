@@ -15,55 +15,53 @@
     <header>
         <nav>
             <a href="index.html">الرئيسية</a>
-            <a href="code.html">اوامر sql</a>
-            <a href="connect.html">ربط mysql بالواجهات</a>
+            <a href="code.html" class="active"> sql</a>
+            <a href="connect.html">ربط مع vs</a>
+            <a href="soon.html"> العلاقات</a>
         </nav>
      
     </header>
 
-    <section>
+    <div class="top"></div>
 
-        <div class="shemmer shemmer-code">
-
-        </div>
-        <div class="shemmer shemmer-code">
-            
-        </div>
-        <div class="shemmer shemmer-code">
-            
-        </div>
-        <div class="shemmer shemmer-code">
-            
-        </div>
-        <div class="shemmer shemmer-code">
-            
-        </div>
+    <section class="page">
 
         <div class="my-sql create-database">
             <h2>انشاء قاعدة بيانات جديده :</h2>
             <article>
                 <div>
-                    <button onclick="copyText()" class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy"  title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
-                  
+                    
                 </div>
-                <p id="result">
-                   <span>CREATE DATABASE</span>  my_database;
+                <p class="result">
+                    <span>CREATE DATABASE</span>  my_database;
                 </p>
             </article>
             
+        </div>
+      
+        <div class="my-sql">
+            <h2>عرض جميع قواعد البيانات :</h2>
+            <article>
+                <div>   
+                    <button class="copy"   title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                </div>
+            <p class="result"><span>SHOW</span> databases;</p>
+            </article>
         </div>
 
         <div class=" my-sql use-database">
             <h2>تحديد قاعدة البيانات : </h2>
             <article>
                 <div>
-                    <button onclick="copyText()" class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
-                  
+                    
                 </div>
-                <p id="result">
-                   <span>USE DATABASE</span>  my_database;
+                <p class="result">
+                    <span>USE </span>  my_database;
                 </p>
             </article>
             <h5>هنا نقوم باختيار قاعدة البيانات الخاصة بنا لاجراء العمليات عليها</h5>
@@ -73,51 +71,37 @@
             <h2> انشاء حدول جديد : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
-                  
+                    
                 </div>
                 
     <pre>
-    <p><span>CREATE TABLE</span> students (
+    <p class="result"><span>CREATE TABLE</span> students (
     id <span>INT NOT NULL</span> AUTO_INCREMENT,
     name <span>VARCHAR(255)</span> <span>NOT NULL</span>,
     email <span>VARCHAR(255)</span> <span>NOT NULL</span>,
     <span>PRIMARY KEY</span> (id)
                     );</p>                
     </pre>
-               
+                
             </article>
             <h5>هنا قمنا بانشاء جدول جديد يحتوى على عمودين الاسم والايميل</h5>
-        </div>
-
-        <div class="my-sql chinge-name-table">
-            <h2>تغيير اسم جدول : </h2>
-            <article>
-                <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
-                    <h3>SQL (DDL)</h3>
-                    
-                </div>
-                <p>
-                    <span>RENAME TABLE</span> sudents <span>TO</span> clients;
-                </p>
-            </article>
         </div>
 
         <div class="my-sql ching-in-table">
             <h2>تعديل في جدول : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
                 </div>
-               
+                
     <pre>
-    <p><span>ALTER TABLE</span> students
+    <p class="result"><span>ALTER TABLE</span> students
     <span>ADD</span> phone_number <span>VARCHAR(255)</span>;</p>
     </pre>
-               
+                
             </article>
             <h5>هنا قمنا باضافة عمود جديد في الجدول</h5>
         </div>
@@ -126,15 +110,16 @@
             <h2>اضافة بيانات الى الجدول : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DML)</h3>
                 </div>
     <pre>
-    <p><span>INSERT INTO</span> students (name, email)
+    <p class="result"><span>INSERT INTO</span> students (name, email,phone_number)
     <span>VALUES</span> 
     (
-    'wael albahri', 
-    'wael@example.com'
+    "wael albahri",
+    'wael@example.com',
+    "777"
     );</p>
     </pre>
             </article>
@@ -146,11 +131,11 @@
             <h2>عرض جميع بيانات الجدول : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQ (DML)</h3>
                 </div>
-                <p>
-                    <span>SECETE</span> * <span>FROM</span> students;
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> students;
                 </p>
             </article>
             <h5>
@@ -161,11 +146,11 @@
             <h2>عرض جميع بيانات بشرط معين : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQ (DML)</h3>
                 </div>
-                <p>
-                    <span>SECETE</span> * <span>FROM</span> students <span>WHERE</span> id = 1;
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> students <span>WHERE</span> id = 1;
                 </p>
             </article>
             <h5>
@@ -177,11 +162,11 @@
             <h1>تعديل بيانات في جدول : </h1>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DML)</h3>
                 </div>
     <pre>
-    <p><span>UPDATE</span> students
+    <p class="result"><span>UPDATE</span> students
     <span>SET</span> email = 'wael10@example.com'
     <span>WHERE</span> id = 1;</p>
     </pre>
@@ -191,14 +176,15 @@
             </h5>
         </div>
 
+
         <div class="my-sql delete">
             <h2>حذف بيانات من جدول : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DML)</h3>
                 </div>
-                <p><span>DELETE</span> <span>FROM </span>students <span>WHERE</span> id = 1;</p>
+                <p class="result"><span>DELETE</span> <span>FROM </span>students <span>WHERE</span> id = 1;</p>
             </article>
             <h5>
                 هنا سيتم حذف الصف اللذي يملك ال id رقم 1
@@ -209,25 +195,62 @@
             <h2>حذف جميع البيانات من الجدول : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
                 </div>
-                <p>
+                <p class="result">
                     <span>TRUNCATE TABLE</span> students;
                 </p>
             </article>
             <h5>هنا سيتم حذف جميع البيانات دون حذف الجدول</h5>
         </div>
 
+        <div class="my-sql chinge-name-table">
+            <h2>تغيير اسم جدول : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                <p class="result">
+                    <span>RENAME TABLE</span> sudents <span>TO</span> clients;
+                </p>
+            </article>
+        </div>
+
+        <div class="my-sql">
+            <h2>عرض تفاصيل اعمدة الجدول : </h2>
+
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                </div>
+                <p class="result"><span>DESC </span> clients;</p>
+            </article>
+        </div>
+
+        <div class="my-sql ">
+            <h2>عرض جميع الجداول في قاعدة البيانات الخاصة بنا : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                </div>
+                <p class="result"><span>SHOW </span> tables;</p>
+            </article>
+        </div>
+        
         <div class="my-sql del-table">
             <h2>حذف الجدول من قاعدة البيانات: </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
                 </div>
-                <p>
-                    <span>DROP TABLE</span> students;
+                <p class="result">
+                    <span>DROP TABLE </span> clients;
                 </p>
             </article>
             <h5>هنا سيتم حذف الجدول مع البيانات من قاعدة البيانات</h5>
@@ -237,18 +260,45 @@
             <h2>حذف قاعدة البيانات : </h2>
             <article>
                 <div>
-                    <button class="btn" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
                     <h3>SQL (DDL)</h3>
                 </div>
-                <p>
+                <p class="result">
                     <span>DROP DATABASE </span> my_database;
                 </p>
             </article>
             <h5>هنا سيتم حذف قاعدة البيانات كاملة بما فيها الجدوال</h5>
         </div>
 
+        <hr>
+
+        <div class="inner">
+            <span>اوامر Sql الخاصة بالعلاقات</span>
+            <a href="soon.html">عرض</a>
+        </div>
+
     </section>
+
+    <div class="load">
+        <div class="shemmer shemmer-code">
+
+        </div>
+        <div class="shemmer shemmer-code">
+            
+        </div>
+        <div class="shemmer shemmer-code">
+            
+        </div>
+        <div class="shemmer shemmer-code">
+            
+        </div>
+        <div class="shemmer shemmer-code">
+            
+        </div>
+    </div>
+
     <button onclick="scrollToTop()" id="toTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+
     <footer>
         <p>BY : WAEL ALBAHRI &copy; 2023</p>
     </footer>
@@ -256,9 +306,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
     <script>
        $(window).on('load',function(){
-           $(".shemmer").fadeOut(1000);
-           $(".my-sql").fadeIn(1000);
-       }); 
+           $(".load").fadeOut(1000);
+           $(".page").fadeIn(1000);
+       });
+
     </script>
 
 
