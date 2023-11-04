@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>العلاقات</title>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="code.html"> sql</a>
+            <a href="connect.html">ربط مع vs</a>
+            <a href="join.html" class="active"> العلاقات</a>
+        </nav>
+     
+    </header>
+
+    <div class="top"></div>
+
+
+    <section class="page">
+
+        <div class="view">
+
+            <article>
+                
+                <h2> # في هذا القسم سنشرح مشروع بسيط :</h2>
+
+                <div class="imgs im">
+
+                    <div>
+                        <img src="erd.png" alt="erd">
+                        <p>
+                            هذا نموذج مخطط ER سنقوم بتنفيذ هذا المخطط ننشئ قاعده بيانات والجدوال المطلوبة والربط بينها لكننا سنققل الاعمده نظرا لانها اعمدة المخطط كثيره
+                        </p>
+                    </div>
+
+                    <div>
+                        <img src="schema.png" alt="schema">
+                        <p>
+                           هذا المخطط SCHema اللذي سينتج بعد انشائنا للجداول وربطها ببعضها بحيث يوضح هذا المخطط نوع كل عمود ومسار الربط
+                        </p>
+                    </div>
+
+                </div>
+
+                <h5>
+                    اتبع الخطوات بالترتيب لتحقيق النتائج المطلوبة : 
+
+                    ملاحظة : يمكنك تجربة اي استعلام والتدرب اكثر علي الاستعلام لاتكتفي فقط بالامثلة الموجوده
+                </h5>
+            </article>
+
+        </div>
+
+        <div class="my-sql create-database">
+            <h2>1- انشاء قاعدة بيانات جديده :</h2>
+            <article>
+                <div>
+                    <button class="copy"  title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                <p class="result">
+                    <span>CREATE DATABASE</span>  school;
+                </p>
+            </article>
+            
+        </div>
+
+        <div class=" my-sql use-database">
+            <h2>2- تحديد قاعدة البيانات : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                <p class="result">
+                    <span>USE </span>  school;
+                </p>
+            </article>
+            <h5>هنا نقوم باختيار قاعدة البيانات الخاصة بنا لاجراء العمليات عليها</h5>
+        </div>
+
+        <div class=" my-sql create-table">
+            <h2>3-  انشاء جدول الاول (الاقسام ) : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                
+    <pre>
+    <p class="result"><span>CREATE TABLE</span> depr (
+    id <span>INT NOT NULL PRIMARY </span>KEY AUTO_INCREMENT,
+    name <span>VARCHAR(50)</span> <span>NOT NULL</span>,
+    num <span>INT NOT NULL</span>
+                    );</p>                
+    </pre>
+                
+            </article>
+            <h5>هنا قمنا بانشاء جدول الاقسام واللذي يحتوي على عمود ال id واسم القسم ورقم للقسم</h5>
+        </div>
+
+        <div class=" my-sql create-table">
+            <h2>4-  انشاء الجدول الثاني ( الطلاب ) </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                
+    <pre>
+    <p class="result"><span>CREATE TABLE</span> students(
+    id <span>INT NOT NULL PRIMARY </span>KEY AUTO_INCREMENT,
+    name <span>VARCHAR(50)</span> <span>NOT NULL</span>,
+    phone <span>INT NOT NULL</span>,
+    num_id <span>INT NOT NULL UNIQUE</span>,
+    age <span>DATE NOT NULL</span>,
+    depr_id <span>INT NOT NULL</span>,
+    <span>FOREIGN KEY</span> (depr_id) <span>REFERENCES</span> depr (id) <span> ON DELETE CASCADE ON UPDATE CASCADE </span>
+                    );</p>                
+    </pre>
+                
+            </article>
+            <h5>هنا قمنا بانشاء جدول الطلاب واللذي يحتوي على id واسم الطالب ورقم الهاتف ورقم اكاديمي للطالب والعمر ومفتاح فرعي يشير الى جدول الاقسام</h5>
+        </div>
+        
+        <div class=" my-sql create-table">
+            <h2>5-  انشاء الجدول الثالث ( المواد ) </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                
+    <pre>
+    <p class="result"><span>CREATE TABLE</span> materials(
+    id <span>INT NOT NULL PRIMARY </span>KEY AUTO_INCREMENT,
+    name <span>VARCHAR(50)</span> <span>NOT NULL</span>,
+    hours <span>INT NOT NULL</span>,
+    depr_id <span>INT NOT NULL</span>,
+    <span>FOREIGN KEY</span> (depr_id) <span>REFERENCES</span> depr (id) <span> ON DELETE CASCADE ON UPDATE CASCADE </span>
+                    );</p>                
+    </pre>
+                
+            </article>
+            <h5>هنا قمنا بانشاء جدول المواد واللذي يحتوي على id واسم المادة وعدد الساعات ومفتاح فرعي يشير الى جدول الاقسام</h5>
+        </div>
+        
+        <div class=" my-sql create-table">
+            <h2>6-  انشاء الجدول الرابع ( الشهائد ) </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                
+    <pre>
+    <p class="result"><span>CREATE TABLE</span> Results (
+    id <span>INT NOT NULL PRIMARY </span>KEY AUTO_INCREMENT,
+    avg <span>FLOAT NOT NULL</span>,
+    code <span>INT NOT NULL UNIQUE</span>,
+    stud_id <span>INT NOT NULL UNIQUE</span>,
+    <span>FOREIGN KEY</span> (stud_id) <span>REFERENCES</span> students (id) <span> ON DELETE CASCADE ON UPDATE CASCADE </span>
+                    );</p>                
+    </pre>
+                
+            </article>
+            <h5>هنا قمنا بانشاء جدول الشهائد واللذي يحتوي على id والمعدل النهائي ورقم فريد لكل شهاده ومفتاح فرعي يشير لجدول الطلاب</h5>
+        </div>
+
+        <div class=" my-sql create-table">
+            <h2>6-  انشاء الجدول الخامس لربط الجدولين ( الطلاب مع المواد ) </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DDL)</h3>
+                    
+                </div>
+                
+    <pre>
+    <p class="result"><span>CREATE TABLE</span> stud_with_matr (
+    stud_id <span>INT NOT NULL</span>,
+    mat_id <span>INT NOT NULL</span>,
+    <span>FOREIGN KEY</span> (stud_id) <span>REFERENCES</span> students (id) <span> ON DELETE CASCADE ON UPDATE CASCADE </span>,
+    <span>FOREIGN KEY</span> (mat_id) <span>REFERENCES</span> materials (id) <span> ON DELETE CASCADE ON UPDATE CASCADE </span>
+                    );</p>                
+    </pre>
+                
+            </article>
+            <h5>هنا قمنا بانشاء جدول الطلاب مع المواد واللذي يعتبر علاقة كل الى الكل واللذي يحتوي على مفتاحين فرعيين يشيران الى جدولي الطلاب والمواد</h5>
+        </div>
+
+        <div class="my-sql insert">
+            <h2>7-  اضافة بيانات الى جدول الاقسام : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DML)</h3>
+                </div>
+    <pre>
+    <p class="result"><span>INSERT INTO</span> depr  (name, num)
+    <span>VALUES</span> 
+    ("CS",111),
+    ("IT",222),
+    ("IS",333);
+</p>
+    </pre>
+            </article>
+            <h5>هنا قمنا باضافة ثلاثة صفوف الى جدول الاقسام</h5>
+
+        </div>
+
+        <div class="my-sql insert">
+            <h2>8-  اضافة بيانات الى جدول الطلاب : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DML)</h3>
+                </div>
+    <pre>
+    <p class="result"><span>INSERT INTO</span> students (name, phone, num_id, age, depr_id)
+    <span>VALUES</span> 
+    ("wael",776,1010,"2001-10-01-",1),
+    ("ayman",774,1111,"2002-01-01",2),
+    ("osama",775,1011,"2000-03-02",1),
+    ("emad",777,2222,"2003-04-22",3),
+    ("nada",770,1012,"2001-12-30",2),
+    ("amani",771,1001,"1999-05-14",3);
+    
+</p>
+    </pre>
+            </article>
+            <h5>هنا قمنا باضافة ستة صفوف الى جدول الطلاب</h5>
+
+        </div>
+
+        <div class="my-sql insert">
+            <h2>9-  اضافة بيانات الى جدول المواد: </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DML)</h3>
+                </div>
+    <pre>
+    <p class="result"><span>INSERT INTO</span> materials (name, hours, depr_id)
+    <span>VALUES</span> 
+    ("mysql",10,1),
+    ("networks",20,2),
+    ("web",5,2),
+    ("java",25,3),
+    ("ai",30,1);
+    
+</p>
+    </pre>
+            </article>
+            <h5>هنا قمنا باضافة خمسة صفوف الى المواد</h5>
+
+        </div>
+
+        <div class="my-sql insert">
+            <h2>10-  اضافة بيانات الى جدول الشهائد: </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DML)</h3>
+                </div>
+    <pre>
+    <p class="result"><span>INSERT INTO</span> results (avg, code, stud_id)
+    <span>VALUES</span> 
+    (90.2,10,1),
+    (88.5,20,2),
+    (99.1,30,3),
+    (70.8,40,4),
+    (74.9,50,5),
+    (55.6,60,6);
+    
+</p>
+    </pre>
+            </article>
+            <h5>هنا قمنا باضافة ستة صفوف الى جدول الشهائد</h5>
+
+        </div>
+
+        <div class="my-sql insert">
+            <h2>11-  اضافة بيانات الى الجدول الوسيط الطلاب مع المواد: </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQL (DML)</h3>
+                </div>
+    <pre>
+    <p class="result"><span>INSERT INTO</span> stud_with_matr (stud_id , mat_id)
+    <span>VALUES</span> 
+    (1,1),
+    (2,1),
+    (3,1),
+    (1,2),
+    (2,2),
+    (3,2),
+    (1,3),
+    (2,3),
+    (3,3);
+    
+</p>
+    </pre>
+            </article>
+            <h5>هنا قمنا باضافة ستة صفوف الى الحدول الوسيط</h5>
+
+        </div>
+
+        <div class="my-sql select">
+            <h2>12- عرض جميع بيانات جدول الاقسام : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> depr;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض جميع بيانات جدول الاقسام
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>13- عرض جميع بيانات جدول الطلاب : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> students;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض جميع بيانات جدول الطلاب
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>14- عرض جميع بيانات جدول المواد : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> materials;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض جميع بيانات جدول المواد
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>15- عرض جميع بيانات جدول الشهائد : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> * <span>FROM</span> results;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض جميع بيانات جدول الشهائد
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>16- عرض اسماء الطلاب مع ربط جدول اخر : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> students.name <span>FROM </span>students <span>INNER JOIN</span> depr <span>ON</span> students.depr_id = depr.id <span>WHERE</span> depr.id = 2;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض اسماء الطلاب اللذين مسجلين في القسم الثاني فقط
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>17- عرض اسماء المواد وعدد الساعات مع ربط جدول اخر : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> materials.name, materials.hours <span>FROM </span>materials <span>INNER JOIN</span> depr <span>ON</span> materials.depr_id = depr.id <span>WHERE</span> depr.id = 1;
+                </p>
+            </article>
+            <h5>
+                سيتم عرض اسماء المواد وعدد الساعات المضمنة في القسم الاول فقط
+            </h5>
+        </div>
+
+        
+        <div class="my-sql select">
+            <h2>18- عرض اسم الطالب ونتيجته مع ربط جدول اخر : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT</span> students.name,results.avg <span>FROM </span> results <span>INNER JOIN</span> students <span>ON</span> results.stud_id = students.id <span>WHERE</span> students.id = 3;
+                </p>
+            </article>
+            <h5>
+               سيتم عرض اسم الطالب والنتيجه الخاصة به فقط 
+            </h5>
+        </div>
+
+        <div class="my-sql select">
+            <h2>19- عرض اسم الطالب والمادة مع ربط الجدول الوسيط : </h2>
+            <article>
+                <div>
+                    <button class="copy" title="نسخ"><i class="fa-regular fa-copy"></i></button>
+                    <h3>SQ (DML)</h3>
+                </div>
+                <p class="result">
+                    <span>SELECT DISTINCT </span> students.name, materials.name <span>FROM </span> stud_with_matr <span>INNER JOIN</span> students <span>ON</span> stud_with_matr.stud_id = students.id <span>INNER JOIN </span> materials <span> ON </span> stud_with_matr.mat_id = materials.id;
+                </p>
+            </article>
+            <h5>
+               سيتم عرض اسم الطالب واسم الماده بناءا على علاقة كل الى الكل
+            </h5>
+        </div>
+        
+        <div class="load">
+            <div class="shemmer shemmer-code">
+    
+            </div>
+            <div class="shemmer shemmer-code">
+                
+            </div>
+            <div class="shemmer shemmer-code">
+                
+            </div>
+            <div class="shemmer shemmer-code">
+                
+            </div>
+            <div class="shemmer shemmer-code">
+                
+            </div>
+        </div>
+    
+        <button onclick="scrollToTop()" id="toTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+
+    </section>    
+
+
+    <footer>
+        <p>BY : WAEL ALBAHRI &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+    <script>
+    $(window).on('load',function(){
+        $(".load").fadeOut(1000);
+        $(".page").fadeIn(1000);
+    }); 
+    </script>
+
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative; 
 }
 
 .body .soon{
@@ -368,6 +368,12 @@ footer p{
 .span{
     color: #AE6378;
     font-weight: bold;
+}
+.view{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 /* ========================SHMMER========================= */
 @keyframes loading{
